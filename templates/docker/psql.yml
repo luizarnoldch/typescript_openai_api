@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: postgres-local
+    volumes:
+      - "../../tmp/psql/data:/var/lib/postgresql/data"
+    working_dir: /var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: postgres
+      POSTGRES_DB: chatgpt
+    ports:
+      - "5433:5432"

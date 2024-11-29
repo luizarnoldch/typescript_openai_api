@@ -5,7 +5,8 @@
   "scripts": {
     "build": "npx tsc",
     "dev": "nodemon --config nodemon.json",
-    "start": "node dist/index.js"
+    "psql-up": "docker-compose -f templates/docker/psql.yml up -d",
+    "start": "node dist/src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -23,11 +24,13 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "@types/pg": "^8.11.10",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "morgan": "^1.10.0",
     "openai": "^4.70.2",
+    "pg": "^8.13.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   }

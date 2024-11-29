@@ -1,0 +1,171 @@
+[
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "role": "assistant", "content": "", "refusal": null },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": "Am" },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": "or" },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": " eterno" },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": "," },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": " desped" },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": "ida" },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": " inesper" },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": "ada" },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [
+        {
+          "index": 0,
+          "delta": { "content": "." },
+          "logprobs": null,
+          "finish_reason": null,
+        },
+      ],
+  },
+  {
+    "id": "chatcmpl-ASyWrM4tOH8prNVzDSVhgQp5yALB5",
+    "object": "chat.completion.chunk",
+    "created": 1731469221,
+    "model": "gpt-4o-mini-2024-07-18",
+    "system_fingerprint": "fp_0ba0d124f1",
+    "choices":
+      [{ "index": 0, "delta": {}, "logprobs": null, "finish_reason": "stop" }],
+  },
+]

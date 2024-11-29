@@ -1,13 +1,13 @@
-import { Router } from "express";
-import OpenAIControllers from "../controllers/openai_controllers";
+import { Router, Request, Response } from "express";
+import OpenAIChatControllers from "../controllers/openai_chat_controllers";
 
-export default class OpenAIRoutes {
+export default class OpenAIChatRoutes {
   public router: Router;
-  private controllers: OpenAIControllers;
+  private controllers: OpenAIChatControllers;
 
   constructor() {
     this.router = Router();
-    this.controllers = new OpenAIControllers();
+    this.controllers = new OpenAIChatControllers();
     this.initializeRoutes();
   }
 
@@ -16,8 +16,8 @@ export default class OpenAIRoutes {
      * @swagger
      * /v1/chat/completion:
      *  post:
-     *    summary: Create a chat completion based on user input.
-     *    description: This endpoint interacts with the OpenAI API to generate a response based on the user-provided message.
+     *    summary: Create chat completion.
+     *    description: Creates a model response for the given chat conversation. Learn more in the text generation, vision, and audio guides.
      *    tags: [Chats]
      *    requestBody:
      *      required: true
@@ -154,9 +154,73 @@ export default class OpenAIRoutes {
      *                  type: string
      *                  example: "Failed to complete the request"
      */
+    this.router.post("/completion", async (req: Request, res: Response) => {
+      await this.controllers.ChaCompletion(req, res);
+    });
 
-    this.router.post("/completion", (req, res) =>
-      this.controllers.ChaCompletion(req, res)
+    /**
+     * @swagger
+     * /v1/chat/completion/stream:
+     *  post:
+     *    summary: Create chat completion stream.
+     *    description: Streams the model's response for the given chat conversation. The response is sent as a series of events.
+     *    tags: [Chats]
+     *    requestBody:
+     *      required: true
+     *      content:
+     *        application/json:
+     *          schema:
+     *            type: object
+     *            properties:
+     *              messages:
+     *                type: string
+     *                description: The message to send to the AI for completion.
+     *                example: "Dame una historia de 4 palabras"
+     *            required:
+     *              - messages
+     *    responses:
+     *      200:
+     *        description: Success response with streamed chat completion results.
+     *        content:
+     *          text/event-stream:
+     *            schema:
+     *              type: string
+     *              description: The streamed response content.
+     *              example: |
+     *                data: Am
+     *                data: or
+     *                data: eterno
+     *                data: ,
+     *                data: caminos
+     *                data: separados
+     *                data: .
+     *                data: stream_done
+     *      400:
+     *        description: Bad Request. Indicates missing or invalid input fields.
+     *        content:
+     *          application/json:
+     *            schema:
+     *              type: object
+     *              properties:
+     *                error:
+     *                  type: string
+     *                  example: "Invalid request body. 'messages' field is required and should be a string."
+     *      500:
+     *        description: Internal Server Error. Indicates an error with the OpenAI API or server.
+     *        content:
+     *          application/json:
+     *            schema:
+     *              type: object
+     *              properties:
+     *                error:
+     *                  type: string
+     *                  example: "Failed to complete the request"
+     */
+    this.router.post(
+      "/completion/stream",
+      async (req: Request, res: Response) => {
+        await this.controllers.ChatCompletionStream(req, res);
+      }
     );
   }
 }

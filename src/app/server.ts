@@ -5,8 +5,9 @@ import morgan from "morgan";
 import Routes from "./routes";
 import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
-import OpenAIRoutes from "./routes/openai_routes";
 import { options } from "./swaggerOptions";
+import OpenAIChatRoutes from "./routes/openai_chat_routes";
+import OpenAIModelsRoutes from "./routes/openai_models_routes";
 
 class Server {
   public expressApp: Application;
@@ -21,7 +22,19 @@ class Server {
   }
 
   private sanityCheckEnvVariables(): void {
-    const requiredEnvVars = ["PORT", "OPENAI_API_KEY"];
+    const requiredEnvVars = [
+      "PORT",
+      "OPENAI_API_KEY",
+      "PG_HOST",
+      "PG_USER",
+      "PG_PASSWORD",
+      "PG_DATABASE",
+      "PG_PORT",
+      "PG_MAX_CONNECTIONS",
+      "PG_SSL",
+      "PG_TIME_LIMIT",
+      "PG_CONNECTION_LIMIT",
+    ];
     const missingVariables: string[] = [];
 
     requiredEnvVars.forEach((variable) => {
@@ -49,10 +62,14 @@ class Server {
 
     const routes = new Routes();
     this.expressApp.use("/v1/", routes.router);
-    
-    // Chat EndPoints
-    const openaiRoutes = new OpenAIRoutes();
-    this.expressApp.use("/v1/chat/", openaiRoutes.router);
+
+    // OpenAI Chat Routes
+    const openaiChatRoutes = new OpenAIChatRoutes();
+    this.expressApp.use("/v1/chat/", openaiChatRoutes.router);
+
+    // OpenAI Models Routes
+    const openaiModelsRoutes = new OpenAIModelsRoutes();
+    this.expressApp.use("/v1/models/", openaiModelsRoutes.router);
   }
 
   public listen(): void {

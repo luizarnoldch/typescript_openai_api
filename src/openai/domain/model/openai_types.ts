@@ -1,14 +1,18 @@
 import {
   ChatCompletionCreateParamsNonStreaming,
   ChatCompletion,
+  ModelsPage,
+  Models,
 } from "openai/resources";
 
-// ========== ChatCompletionInput ========== <- BEGIN
+// ========== Chat-Types ========== <- BEGIN
 export type ChatCompletionInput = ChatCompletionCreateParamsNonStreaming;
-// ========== ChatCompletionInput ========== <- END
 
-// ========== ChatCompletionOutput ========== <- BEGIN
 export type ChatCompletionOutput = ChatCompletion & {
   _request_id?: string | null;
 };
-// ========== ChatCompletionOutput ========== <- END
+// ========== Chat-Types ========== <- END
+
+// ========== Models-Types ========== <- BEGIN
+export type ModelsOutput = ModelsPage;
+// ========== Models-Types ========== <- END

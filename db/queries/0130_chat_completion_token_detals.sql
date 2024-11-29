@@ -1,0 +1,2 @@
+SELECT details_id, usage_id, reasoning_tokens, accepted_prediction_tokens, rejected_prediction_tokens
+	FROM chat.completion_tokens_details;
