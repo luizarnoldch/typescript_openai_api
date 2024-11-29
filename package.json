@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "dev": "nodemon --config nodemon.json",
     "psql-up": "docker-compose -f templates/docker/psql.yml up -d",
-    "start": "node dist/src/index.js"
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
