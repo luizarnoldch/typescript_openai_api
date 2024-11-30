@@ -12,3 +12,8 @@ services:
     command: npm start
     env_file:
       - .env
+    networks:
+      - dev-env
+networks:
+  dev-env:
+    external: true

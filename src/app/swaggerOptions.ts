@@ -8,9 +8,10 @@ export const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
+        url: `http://localhost:${process.env.EXT_PORT || "3000"}`,
       },
     ],
   },
   apis: ["./src/app/routes/**/*.ts"],
 };
+

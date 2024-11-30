@@ -1,6 +1,7 @@
 import "dotenv/config";
 
 import express, { Application } from "express";
+import cors from "cors";
 import morgan from "morgan";
 import Routes from "./routes";
 import swaggerUI from "swagger-ui-express";
@@ -24,6 +25,7 @@ class Server {
   private sanityCheckEnvVariables(): void {
     const requiredEnvVars = [
       "PORT",
+      "EXT_PORT",
       "OPENAI_API_KEY",
       "PG_HOST",
       "PG_USER",
@@ -51,6 +53,7 @@ class Server {
   }
 
   private initializeMiddlewares(): void {
+    this.expressApp.use(cors());
     this.expressApp.use(express.json());
     this.expressApp.use(morgan("dev"));
   }
